@@ -1,1 +1,8 @@
+# images
 *.jpg
+
+# np array
+*.npy
+
+# notebook checkpoint
+.ipynb_checkpoints
