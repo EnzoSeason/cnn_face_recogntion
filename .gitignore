@@ -6,3 +6,6 @@
 
 # notebook checkpoint
 .ipynb_checkpoints
+
+# other
+.vscode
