@@ -32,6 +32,6 @@ The model we created is inspired by a state-of-art model, VGG16. There are some 
 
 Our model's accuracy is about **96%** on both training set and validation set. 
 
-In this part, we will present the different types of ROC curve and calculate AUC (Area Under Cuvre) to evalue our model.
+In this part, we will present the different types of ROC curve and calculate AUC (Area Under Cuvre) to evalue our model on the validation set.
 
 ![ROC curves](./data/output/images/roc_all.png)
