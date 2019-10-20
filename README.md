@@ -14,3 +14,12 @@ In training data, we crop labeled face images as positive instances. We generate
 
 We do the same thing for the validation set.
 
+(More details in the the notebook **[data_preparation](./notebook/data_preparation.ipynb)**)
+
+## Modeling
+
+We first load the training and validation data. Then, we create the labels. For the face images, we put them in class *1*. The rest is in class *0*. And, we do the one-hot coding for the labels.
+
+The model we created is inspired by a state-of-art model, VGG16. There are some tricks to improve the model.
+* **To improve the performance**: You can add a more convolutional layer in each block. Because this layer can capture the features of images, such as borders, corners, etc.
+* **To improve the speed of the training**: You can reduce the number of nerons in each layer, especially, these in the *fully connected(fc)* layer. But, the improvement of the training speed may have negative effect in the performance of the model.
