@@ -16,7 +16,7 @@ We do the same thing for the validation set.
 
 (More details in the the notebook **[data_preparation](./notebook/data_preparation.ipynb)**)
 
-## Modeling
+## Creation of Model
 
 We first load the training and validation data. Then, we create the labels. For the face images, we put them in *class 1*. The rest is in *class 0*. And, we do the one-hot coding for the labels.
 
