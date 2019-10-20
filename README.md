@@ -18,8 +18,18 @@ We do the same thing for the validation set.
 
 ## Modeling
 
-We first load the training and validation data. Then, we create the labels. For the face images, we put them in class *1*. The rest is in class *0*. And, we do the one-hot coding for the labels.
+We first load the training and validation data. Then, we create the labels. For the face images, we put them in *class 1*. The rest is in *class 0*. And, we do the one-hot coding for the labels.
 
 The model we created is inspired by a state-of-art model, VGG16. There are some tricks to improve the model.
-* **To improve the performance**: You can add a more convolutional layer in each block. Because this layer can capture the features of images, such as borders, corners, etc.
+
+* **To improve the performance**: You can add more blocks or more convolutional layers in each block. Because convolutional layer can capture the features of images, such as borders, corners, etc.
+
 * **To improve the speed of the training**: You can reduce the number of nerons in each layer, especially, these in the *fully connected(fc)* layer. But, the improvement of the training speed may have negative effect in the performance of the model.
+
+(More details in the notebook **[modeling](./notebook/modeling.ipynb)**)
+
+## Evaluation of Model
+
+Our model's accuracy is about **96%** on both training set and validation set. 
+
+In this part, we will present the ROC curve and calculate AUC (Area Under Cuvre) to evalue our model.
