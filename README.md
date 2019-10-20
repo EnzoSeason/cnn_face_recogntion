@@ -35,3 +35,10 @@ Our model's accuracy is about **96%** on both training set and validation set.
 In this part, we will present the different types of ROC curve and calculate AUC (Area Under Cuvre) to evalue our model on the validation set.
 
 ![ROC curves](./data/output/images/roc_all.png)
+
+## Visualization of Model
+To understand how our model makes the classification decision, we try to visualize our model.
+
+According to the paper [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391), we create an implementation of the algorithme **Guided Grad-CAM**.
+
+(More details in the notebook **[evaluation](./notebook/evaluation.ipynb)**)
