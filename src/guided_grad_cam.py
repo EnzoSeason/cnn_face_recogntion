@@ -6,7 +6,7 @@ from tensorflow.python.framework import ops
 import keras.backend as K
 import tensorflow as tf
 
-import cv2
+from skimage import io, util, color, transform
 
 # Guided_backprop
 def register_gradient():
@@ -33,3 +33,32 @@ def compile_saliency_function(model, activation_layer='block4_conv1'):
     return K.function([model.input, K.learning_phase()], [saliency])
 
 # Grad-CAM
+def calc_importance(model, preprocessed_input, layer_name, class_index):
+    # get class score (input of the softmax)
+    yc = model.output.op.inputs[0][0, class_index]
+    # get feature maps(output of the given layer)
+    Ak = model.get_layer(layer_name).output
+    
+    # calculate the gradients
+    print('Run Grad_CAM on class '+str(class_index)+', layer '+layer_name)
+
+    # define the gradients function
+    grads = K.gradients(yc, [Ak])[0]
+    grads_func = K.function(inputs=[model.input], outputs=[Ak, grads])
+    # calculation
+    Ak_val, grads_val = grads_func([preprocessed_input])
+    Ak_val, grads_val = Ak_val.squeeze(), grads_val.squeeze()
+    
+    # calculate the importance
+    importance = np.mean(grads_val, axis=(0,1))
+
+    return(importance, Ak_val)
+
+def calc_gradcam(preprocessed_input, importance, features_maps_val):
+    # create heatmap
+    heatmap = np.maximum(0, np.sum(importance*features_maps_val, axis=2))
+    # create output
+    output_image = heatmap * preprocessed_input
+
+    return (heatmap, output_image)
+ 
