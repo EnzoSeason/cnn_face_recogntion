@@ -41,4 +41,13 @@ In this part, we will present the different types of ROC curve and calculate AUC
 ## Visualization of Model
 To understand how our model makes the classification decision, we try to visualize our model.
 
-According to the paper [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391), we create an implementation of the algorithme **Guided Grad-CAM**, inspired by the work of [Jacob Gildenblat](https://github.com/jacobgil/keras-grad-cam).
+According to the paper [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391), we create an implementation of the algorithme **Guided Back Propagation**, inspired by the work of [Jacob Gildenblat](https://github.com/jacobgil/keras-grad-cam).
+
+![origin_pos](./data/output/images/origin_image_pos.png)
+![exp_pos](./data/output/images/saliency_map_pos.png)
+
+![origin_neg](./data/output/images/origin_image_neg.png)
+![exp_neg](./data/output/images/saliency_maps_neg.png)
+
+
+
