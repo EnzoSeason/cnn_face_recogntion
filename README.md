@@ -49,5 +49,5 @@ According to the paper [Grad-CAM: Visual Explanations from Deep Networks via Gra
 ![origin_neg](./data/output/images/origin_image_neg.png)
 ![exp_neg](./data/output/images/saliency_maps_neg.png)
 
-
+(More details in the notebook **[visualization](./notebook/visualization.ipynb)**)
 
